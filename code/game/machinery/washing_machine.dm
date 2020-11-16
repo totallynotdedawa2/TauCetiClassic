@@ -22,7 +22,7 @@
 	//0 = not hacked
 	//1 = hacked
 	var/gibs_ready = 0
-	var/obj/crayon
+	/*var/obj/crayon*/
 
 /obj/machinery/washing_machine/verb/start()
 	set name = "Start Washing"
@@ -56,7 +56,7 @@
 		qdel(HH)
 
 
-	if(crayon)
+	/*if(crayon)
 		var/wash_color
 		if(istype(crayon,/obj/item/toy/crayon))
 			var/obj/item/toy/crayon/CR = crayon
@@ -197,7 +197,7 @@
 					H.name = new_softcap_name
 					H.desc = new_desc
 		qdel(crayon)
-		crayon = null
+		crayon = null*/
 
 
 	if( locate(/mob,contents) )
@@ -224,7 +224,7 @@
 	/*if(isscrewdriver(W))
 		panel = !panel
 		to_chat(user, "<span class='notice'>you [panel ? </span>"open" : "close"] the [src]'s maintenance panel")*/
-	if(istype(W,/obj/item/toy/crayon) ||istype(W,/obj/item/weapon/stamp))
+	/*if(istype(W,/obj/item/toy/crayon) ||istype(W,/obj/item/weapon/stamp))
 		if( state in list(	1, 3, 6 ) )
 			if(!crayon)
 				user.drop_item()
@@ -233,8 +233,8 @@
 			else
 				..()
 		else
-			..()
-	else if(istype(W,/obj/item/weapon/grab))
+			..()*/
+	if(istype(W,/obj/item/weapon/grab))
 		if( (state == 1) && hacked)
 			var/obj/item/weapon/grab/G = W
 			if(ishuman(G.assailant) && iscorgi(G.affecting))
@@ -330,7 +330,7 @@
 			state = 3
 			for(var/atom/movable/O in contents)
 				O.loc = src.loc
-			crayon = null
+			/*crayon = null*/
 			state = 1
 		if(5)
 			to_chat(user, "<span class='warning'>The [src] is busy.</span>")
@@ -344,7 +344,7 @@
 					M.gib()
 			for(var/atom/movable/O in contents)
 				O.loc = src.loc
-			crayon = null
+			/*crayon = null*/
 			state = 1
 
 	update_icon()
