@@ -9236,7 +9236,6 @@
 /obj/item/device/radio/headset/ert,
 /obj/item/clothing/mask/breath,
 /obj/item/clothing/glasses/science,
-/obj/item/clothing/shoes/purple,
 /turf/unsimulated/floor{
 	dir = 1;
 	icon_state = "vault"
